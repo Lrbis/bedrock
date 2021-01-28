@@ -2,29 +2,46 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% macro try_vpn_button(button_text) -%}
-  <a class="vpn-button try js-try-vpn" href="https://vpn.mozilla.org/r/vpn/subscribe">
+{% macro join_waitlist_button(button_text, is_conditional=True, position=None) -%}
+  <a class="vpn-button waitlist t-dark {% if is_conditional %}js-join-waitlist{% endif %}" href="{{ url('products.vpn.invite') }}" data-cta-type="button" data-cta-text="Join the Waitlist" {% if position %}data-cta-position="{{ position }}"{% endif %}>
     {{ button_text }}
   </a>
 {% endmacro %}
 
-{% macro join_waitlist_button(button_text, conditional=True) -%}
-  <a class="vpn-button waitlist t-dark {% if conditional %}js-join-waitlist{% endif %}" href="{{ url('products.vpn.invite') }}">
-    {{ button_text }}
-  </a>
-{% endmacro %}
-
-{% macro vpn_nav_cta(button_text, alt_button_text, link_text) -%}
+{% macro vpn_nav_cta(button_text, alt_button_text, link_text, utm_source, utm_campaign) -%}
 <div class="vpn-nav-cta">
-  <a class="mzp-c-button mzp-t-secondary mzp-t-md js-try-vpn" href="https://vpn.mozilla.org/r/vpn/subscribe">
-    {{ button_text }}
-  </a>
 
-  <a class="mzp-c-button mzp-t-secondary mzp-t-md js-join-waitlist" href="https://vpn.mozilla.org/vpn/invite">
+  {{ vpn_subscribe_link(
+    entrypoint=utm_source,
+    button_text=button_text,
+    class_name='mzp-c-button mzp-t-secondary mzp-t-md js-try-vpn',
+    optional_parameters={
+      'utm_campaign': utm_campaign
+    },
+    optional_attributes={
+      'data-cta-type': 'fxa-vpn',
+      'data-cta-text': 'Try Mozilla VPN',
+      'data-cta-position': 'navigation',
+    }
+  ) }}
+
+  <a class="mzp-c-button mzp-t-secondary mzp-t-md js-join-waitlist" href="{{ url('products.vpn.invite') }}" data-cta-type="button" data-cta-text="Join the Waitlist" data-cta-position="navigation">
     {{ alt_button_text }}
   </a>
 
-  <a class="mzp-c-cta-link" href="https://vpn.mozilla.org/oauth/init">{{ link_text }}</a>
+  {{ vpn_sign_in_link(
+      entrypoint=utm_source,
+      button_text=link_text,
+      class_name='mzp-c-cta-link',
+      optional_parameters={
+        'utm_campaign': utm_campaign
+      },
+      optional_attributes={
+        'data-cta-type': 'fxa-vpn',
+        'data-cta-text': 'Sign In',
+        'data-cta-position': 'navigation',
+      }
+  ) }}
 </div>
 {% endmacro %}
 

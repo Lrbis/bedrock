@@ -114,22 +114,10 @@ $image-path: '/media/protocol/img';
         top: 0;
     }
 
-    &[data-illustration="n-1"] .n-1 {
-        opacity: 1;
-    }
-
-    &[data-illustration="n-2"] .n-2 {
-        opacity: 1;
-    }
-
-    &[data-illustration="n-3"] .n-3 {
-        opacity: 1;
-    }
-
-    &[data-illustration="n-4"] .n-4 {
-        opacity: 1;
-    }
-
+    &[data-illustration="n-1"] .n-1,
+    &[data-illustration="n-2"] .n-2,
+    &[data-illustration="n-3"] .n-3,
+    &[data-illustration="n-4"] .n-4,
     &[data-illustration="n-5"] .n-5 {
         opacity: 1;
     }

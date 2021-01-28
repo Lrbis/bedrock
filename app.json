@@ -16,6 +16,7 @@
     "DB_DOWNLOAD_IGNORE_GIT": "True",
     "DEBUG": "False",
     "DEV": "True",
+    "FXA_ENDPOINT": "https://stable.dev.lcip.org/",
     "GTM_CONTAINER_ID": "GTM-MW3R8V",
     "LOG_LEVEL": "INFO",
     "PROD_DETAILS_STORAGE": "product_details.storage.PDDatabaseStorage",
