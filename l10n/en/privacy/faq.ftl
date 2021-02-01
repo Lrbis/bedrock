@@ -6,11 +6,11 @@
 
 # HTML page title
 privacy-faq-mozillas-data-privacy-faq = { -brand-name-mozilla }’s Data Privacy FAQ
-privacy-faq-at-mozilla-we-respect-and-protect = At { -brand-name-mozilla } we respect and protect your personal information.
+privacy-faq-at-mozilla-we-respect-and-protect-desc = At { -brand-name-mozilla } we respect and protect your personal information.
 
 privacy-faq-we-stand-for-people-over-profit = We Stand for People Over Profit.
 privacy-faq-it-can-be-tricky-for-people = It can be tricky for people to know what to expect of any software or services they use today. The technology that powers our lives is complex and people don’t have the time to dig into the details. That is still true for { -brand-name-firefox }, where we find that people have many different ideas of what is happening under the hood in their browser.
-privacy-faq-at-mozilla-we-respect-and-protect = At { -brand-name-mozilla } we respect and protect your personal information.
+privacy-faq-at-mozilla-we-respect-and-protect = At { -brand-name-mozilla }, we respect and protect your personal information:
 
 # Variables:
 #   $link (url) - link to https://www.mozilla.org/privacy/principles/

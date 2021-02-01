@@ -24,7 +24,7 @@ def migrate(ctx):
                 )
             ),
             FTL.Message(
-                id=FTL.Identifier("privacy-faq-at-mozilla-we-respect-and-protect"),
+                id=FTL.Identifier("privacy-faq-at-mozilla-we-respect-and-protect-desc"),
                 value=REPLACE(
                     faq,
                     "At Mozilla we respect and protect your personal information.",
